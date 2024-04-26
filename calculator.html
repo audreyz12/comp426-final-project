@@ -15,16 +15,36 @@
             <div>
                 <input type="text" id="nameInput" placeholder="Enter lover name...">
                 <button id="createButton">Create</button>
+                <input type="text" id="crushInput" placeholder="Enter your name...">
+                <button id="calculateButton">Calculate score</button>
+
+
                 <div id="loverInfo">
                     <!-- Lover information will be displayed here -->
                 </div>
+                <div id="scoreInfo">
+                    <!-- Lover information will be displayed here -->
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="loverinfo.html">Get All Lover Information</a></li>
+                      </ul> 
+
+                </div>
+
             </div>
 
             <script>
             function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
+                var element = document.body;
+                element.classList.toggle("dark-mode");
+
+                // Check current mode and store in localStorage
+                const isDarkMode = element.classList.contains("dark-mode");
+                localStorage.setItem("darkMode", isDarkMode);
             }
+
+            
             </script>
 
         </body>
