@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" type = "text/css" href="calculator.css">
+            <title> Love Calculator </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script type="module" src="./calculator.js"></script>
+        </head>
+        <body>
+            <h2>Toggle Dark/Light Mode</h2>
+            <p>Click the button to toggle between dark and light mode for this page.</p>
+
+            <button onclick="myFunction()">Toggle dark mode</button>
+
+            <div>
+                <input type="text" id="nameInput" placeholder="Enter lover name...">
+                <button id="createButton">Create</button>
+                <div id="loverInfo">
+                    <!-- Lover information will be displayed here -->
+                </div>
+            </div>
+
+            <script>
+            function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            }
+            </script>
+
+        </body>
+    </html>
