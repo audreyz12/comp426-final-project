@@ -38,9 +38,20 @@ export class Lover{
     getName(){
         return this.#name;
     }
-
+    setAge(age){
+        this.#age = age;
+    }
+    setWeakness(weakness){
+        this.#weakness = weakness;
+    }
+    setNumber(number){
+        this.#number = number;
+    }
+    static deleteLover(name){
+        Lover.#all_people = Lover.#all_people.filter((i) => i.getName() !== name);
+    }
     static getAllLovers(){
-        return Lover.#all_people;
+        return Lover.#all_people.map(lover => lover.json());
     }
 
     static getAllLoverNames(){

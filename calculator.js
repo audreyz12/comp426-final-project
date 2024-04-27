@@ -31,6 +31,7 @@ function calculateScore(name1, name2){
 
     scoreDiv.innerHTML = `
     <p>Score: ${score}</p>`;
+    
 }
 
 let createButton = document.getElementById("createButton");
@@ -44,7 +45,6 @@ let calculateButton = document.getElementById("calculateButton");
  
 calculateButton.addEventListener('click', async() => {
     calculateScore(document.getElementById('nameInput').value, document.getElementById("crushInput").value);
-
 });
 
 document.addEventListener('DOMContentLoaded', () => {
