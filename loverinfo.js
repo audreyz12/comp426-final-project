@@ -19,10 +19,10 @@ function displayAllLovers(lovers) {
     lovers.forEach(lover => {
         let loverItem = document.createElement('li');
         loverItem.innerHTML = `
-            <p>${lover.name}</p>
-            <p>${lover.age}</p>
-            <p>${lover.weakness}</p>
-            <p>${lover.number}</p>`;
+            <p>Name: ${lover.name}</p>
+            <p>Age: ${lover.age}</p>
+            <p>Weakness: ${lover.weakness}</p>
+            <p>Number: ${lover.number}</p>`;
         loverList.appendChild(loverItem);
     });
     loverInfoDiv.appendChild(loverList);

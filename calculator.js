@@ -31,7 +31,45 @@ function calculateScore(name1, name2){
 
     scoreDiv.innerHTML = `
     <p>Score: ${score}</p>`;
+    postScore(name1, name2, score);
     
+}
+
+async function postScore(name1, name2, score){
+    const url = `http://localhost:3000/match`; // Full URL including port
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({name1: name1, name2: name2, score: score})});
+
+
+    if (response.ok) {
+        const lover = await response.json();
+        //lover = JSON.parse(lover);
+    } else {
+        console.error('Failed to post score');
+    }
+}
+
+async function getPhoto(){
+    document.getElementById("photoInfo").innerHTML = '';
+
+
+    let url = `https://cataas.com/cat`;
+
+    let response = await fetch(url);
+    let photo = document.getElementById("photoInfo");
+    if (response.ok) {
+        let photoImage = document.createElement('img');
+        photoImage.src = url;
+        photo.appendChild(photoImage);
+    } else {
+        console.error('Failed to post photo');
+    }
+
 }
 
 let createButton = document.getElementById("createButton");
@@ -45,6 +83,7 @@ let calculateButton = document.getElementById("calculateButton");
  
 calculateButton.addEventListener('click', async() => {
     calculateScore(document.getElementById('nameInput').value, document.getElementById("crushInput").value);
+    getPhoto();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
