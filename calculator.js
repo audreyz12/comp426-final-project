@@ -65,6 +65,9 @@ async function getPhoto(){
     if (response.ok) {
         let photoImage = document.createElement('img');
         photoImage.src = url;
+        photoImage.width = 300;
+        let bry = document.createElement('br');
+        photo.appendChild(bry)
         photo.appendChild(photoImage);
     } else {
         console.error('Failed to post photo');
