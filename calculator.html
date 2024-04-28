@@ -54,18 +54,22 @@
                 const isDarkMode = element.classList.contains("dark-mode");
                 localStorage.setItem("darkMode", isDarkMode);
             }
-                const element = document.body;
+            const element = document.body;
 
-                // Retrieve dark mode preference from localStorage
-                const isDarkMode = localStorage.getItem("darkMode") === "true";
+            // Retrieve dark mode preference from localStorage
+            const isDarkMode = localStorage.getItem("darkMode") === "true";
 
-                // Apply dark mode class based on the stored preference
-                if (isDarkMode) {
-                    element.classList.add("dark-mode");
-                } else {
-                    element.classList.remove("dark-mode");
-                }
-
+            // Apply dark mode class based on the stored preference
+            if (isDarkMode) {
+                element.classList.add("dark-mode");
+            } else {
+                element.classList.remove("dark-mode");
+            }
+            function playSound(soundSrc) {
+                var audio = new Audio(soundSrc); 
+                audio.play(); 
+            }
+            playSound('Lights.mp3');
             
             </script>
         </body>
