@@ -19,10 +19,10 @@ function displayAllMatches(matches) {
     matches.forEach(match => {
         let matchItem = document.createElement('li');
         matchItem.innerHTML = `
-            <p>Name 1: ${match.name1}</p>
-            <p>Name 2: ${match.name2}</p>
-            <p>Love Score: ${match.score}</p>
-            `;
+            <h5>Name 1: ${match.name1}</h5>
+            <h5>Name 2: ${match.name2}</h5>
+            <h5>Love Score: ${match.score}</h5>
+            <h6>&#9825;</h6>`;
         matchList.appendChild(matchItem);
     });
     matchesInfoDiv.appendChild(matchList);

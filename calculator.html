@@ -2,44 +2,49 @@
     <html>
         <head>
             <link rel="stylesheet" type = "text/css" href="calculator.css">
+                <!-- Bootstrap core CSS -->
+            
             <title> Love Calculator </title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <script type="module" src="./calculator.js"></script>
+            <!-- Custom styles for this template -->
+            <link href="cover.css" rel="stylesheet">
         </head>
         <body>
-            <h2>Toggle Dark/Light Mode</h2>
-            <p>Click the button to toggle between dark and light mode for this page.</p>
+            <div id="transparentBack">
+                <h2>Welcome to the Love Calculator....</h2>
+                <p>Could You find your lovr?</p>
 
-            <button onclick="myFunction()">Toggle dark mode</button>
-
-            <div>
-                <input type="text" id="nameInput" placeholder="Enter lover name...">
-                <button id="createButton">Create</button>
-                <input type="text" id="crushInput" placeholder="Enter your name...">
-                <button id="calculateButton">Calculate score</button>
-
-
-                <div id="loverInfo">
-                    <!-- Lover information will be displayed here -->
-                </div>
-                <div id="photoInfo">
-                    <!-- Lover information will be displayed here -->
-                </div>
-                
-                <div id="scoreInfo">
-                    <!-- Lover information will be displayed here -->
-                </div>
 
                 <div>
-                    <ul>
-                        <li><a href="loverinfo.html">Get All Lover Information</a></li>
-                        <li><a href="matches.html">Get All Match Information</a></li>
-                    </ul> 
+                    <input type="text" id="nameInput" placeholder="Enter lovr name...">
+                    <button id="createButton">Create</button>
+                    <input type="text" id="crushInput" placeholder="Enter your name...">
+                    <button id="calculateButton">Calculate score</button>
 
+
+                    <div id="loverInfo">
+                        <!-- Lover information will be displayed here -->
+                    </div>
+                    <div id="photoInfo">
+                        <!-- Lover information will be displayed here -->
+                    </div>
+                    
+                    <div id="scoreInfo">
+                        <!-- Lover information will be displayed here -->
+                    </div>
+
+                    <div>
+                        <ul>
+                            <li class="link"><a href="loverinfo.html">Get All Lovr Information</a></li>
+                            <li class="link"><a href="matches.html">Get All Match Information</a></li>
+                            <!-- <li><button id="darkButton" onclick="myFunction()">Day/Night</button></li> -->
+                        </ul> 
+                    </div>
+                    
                 </div>
-
+                <button id="darkButton" onclick="myFunction()">Day / Night &#127762;</button>
             </div>
-
             <script>
             function myFunction() {
                 var element = document.body;
@@ -52,6 +57,5 @@
 
             
             </script>
-
         </body>
     </html>
