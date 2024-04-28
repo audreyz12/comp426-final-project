@@ -19,15 +19,30 @@
                 <input type="text" id="loverWeakness" placeholder="Lover weakness...">
                 <input type="text" id="loverNumber" placeholder="Lover Number...">
                 <button id="putButton">Make Changes</button>
+                <div id="putError"></div>
                 <h4>Delete Lovr: (May we meet again ?)</h4>
                 <input type="text" id="loverDelete" placeholder="Enter lover name...">
                 <button id="deleteButton">Are you certain?</button>
+                <div id="deleteError"></div>
                 <div>
                     <ul>
                         <li><a href="calculator.html">Back</a></li>
                     </ul> 
                 </div>
             </div>
+            <script>
+                const element = document.body;
+
+                // Retrieve dark mode preference from localStorage
+                const isDarkMode = localStorage.getItem("darkMode") === "true";
+
+                // Apply dark mode class based on the stored preference
+                if (isDarkMode) {
+                    element.classList.add("dark-mode");
+                } else {
+                    element.classList.remove("dark-mode");
+                }
+            </script>
         
             
         </body>

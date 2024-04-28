@@ -29,7 +29,10 @@ function displayAllLovers(lovers) {
     loverInfoDiv.appendChild(loverList);
 
 }
+
 async function putLover(name, age, weakness, number) {
+    document.getElementById("putError").textContent = "";
+
     //name = document.getElementById("nameInput").value;
     const url = `http://localhost:3000/people/${name}`; // Full URL including port
     const response = await fetch(url, {
@@ -46,11 +49,13 @@ async function putLover(name, age, weakness, number) {
         //lover = JSON.parse(lover);
         await getLovers();
     } else {
+        document.getElementById("putError").textContent = "Cannot find lovr";
         console.error('Failed to create lover');
     }
 }
 
 async function deleteLover(name) {
+    document.getElementById("deleteError").textContent = "";
     //name = document.getElementById("nameInput").value;
     const url = `http://localhost:3000/people/${name}`; // Full URL including port
     const response = await fetch(url, { method: 'DELETE' });
@@ -60,6 +65,8 @@ async function deleteLover(name) {
         //lover = JSON.parse(lover);
         await getLovers();
     } else {
+        document.getElementById("deleteError").textContent = "Cannot find lovr";
+
         console.error('Failed to delete lover');
     }
 }
@@ -88,17 +95,3 @@ putButton.addEventListener('click', async() => {
 
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const element = document.body;
-
-    // Retrieve dark mode preference from localStorage
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-
-    // Apply dark mode class based on the stored preference
-    if (isDarkMode) {
-        element.classList.add("dark-mode");
-    } else {
-        element.classList.remove("dark-mode");
-    }
-    console.log(isDarkMode);
-});

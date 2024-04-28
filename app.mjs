@@ -29,8 +29,11 @@ app.get('/match', (req, res) => {
 
 app.get('/people/:name', (req, res) => {
     let lover = Lover.findByName(req.params.name);
-    const depth = req.query.depth ? parseInt(req.query.depth) : null;
-    res.json(Node.getNodeIds(depth));
+    if (!lover) {
+        res.status(400).send("Bad request");
+        return;
+    }
+    res.json(Lover.findByName(name));
     
 });
 
@@ -78,9 +81,16 @@ app.put('/match/:name1', (req, res) => {
 });
 
 app.delete('/people/:name', (req, res) => {
+    let lover = Lover.findByName(req.params.name);
+
+    if (!lover) {
+        res.status(400).send("Bad request");
+        return;
+    }
     Lover.deleteLover(req.params.name);
     res.json(true);
 })
+
 app.delete('/match/:name1', (req, res) => {
     Match.deleteMatch(req.params.name1);
     res.json(true);
